@@ -20,7 +20,7 @@ app.post("/generate-quiz", async (req, res) => {
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-pro-exp-02-05" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `Generate a ${numQuestions }-question multiple-choice quiz on ${subject}. 
                         Each question should have four options and one correct answer. 
                         Return the result in JSON format.`;
