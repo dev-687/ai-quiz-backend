@@ -30,7 +30,11 @@ app.post("/generate-quiz", async (req, res) => {
     });
     
     const response = await result.response;
-    const quizText = response.text();
+    const quizResponse = response.text();
+    const startResponse=quizResponse.indexOf("[");
+    const endResponse=quizResponse.indexOf("]")+1;
+
+    const quizText =quizResponse.substring(startResponse,endResponse) ;
 // console.log(quizText);
 
     return res.status(200).json({  quizText });
