@@ -37,7 +37,7 @@ app.post("/generate-quiz", async (req, res) => {
     const quizText =quizResponse.substring(startResponse,endResponse) ;
 // console.log(quizText);
 
-    return res.status(200).json({  quizResponse });
+    return res.status(200).json({  quizText });
   } catch (error) {
     console.error("Error generating quiz:", error);
     res.status(500).json({ error: "Failed to generate quiz" });
